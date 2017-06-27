@@ -1,0 +1,25 @@
+{
+  "cars": [
+    {
+      "make": "Nissan",
+      "model": "Altima",
+      "year": "2006",
+      "price": "2500",
+      "description": "This is an exceedingly practical car at a shockingly good price."
+    },
+    {
+      "make": "Toyota",
+      "model": "Scion XB",
+      "year": "2006",
+      "price": "200",
+      "description": "Metal and plastic are highly recycleable!"
+    },
+    {
+      "make": "Lexus",
+      "model": "ES 330",
+      "year": "2004",
+      "price": "4500",
+      "description": "Recent body work, leather interior, moon roof, CD changer. A ridiculously good deal not offered to anyone younger than fifty."
+    }
+  ]
+}
