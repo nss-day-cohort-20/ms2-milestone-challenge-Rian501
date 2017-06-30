@@ -8,9 +8,9 @@ You operate a used car lot, and need to have an application where you can update
 
 1. Create an array of cars in the `inventory.json` file (see example structure below). Put at least three cars in the array.
 1. When your page first loads, you need to use an XHR to load the contents of the JSON file, and parse them into a native JavaScript object.
+1. Loop over your array of cars and build up an HTML string to build a card for each car. 
 
-
-1. Loop over your array of cars and build up an HTML string to build a card for each car. Also, use Bootstrap to create rows. Each row should contain 3 columns. Make sure you have a parent element with a class of `container`. __Hint:__ You must build up the entire string of columns/rows before injecting into the DOM. 
+Also, use Bootstrap to create rows. Each row should contain 3 columns. Make sure you have a parent element with a class of `container`. __Hint:__ You must build up the entire string of columns/rows before injecting into the DOM. 
 
 Use a counter variable to know when to close a row after three columns.
 

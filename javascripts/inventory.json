@@ -20,6 +20,20 @@
       "year": "2004",
       "price": "4500",
       "description": "Recent body work, leather interior, moon roof, CD changer. A ridiculously good deal not offered to anyone younger than fifty."
+    },
+    {
+      "make": "Toyota",
+      "model": "Camry",
+      "year": "1991",
+      "price": "1200",
+      "description": "Always starts, occasionally the front right tire goes flat for no reason."
+    },
+    {
+      "make": "Geo",
+      "model": "Prizm",
+      "year": "1996",
+      "price": "1400",
+      "description": "I swear this is actually a Toyota."
     }
   ]
 }
