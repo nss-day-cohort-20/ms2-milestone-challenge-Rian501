@@ -4,6 +4,7 @@ var CarLot = (function (globalScopeCarLot) {
 	let domside = Object.create(null);
 	let outputDiv = document.getElementById('output');
 	let carCard = null;
+	let inputBox = document.getElementById('userInput');
 
 	domside.printToDOM = function (HTMLString) {
 		outputDiv.innerHTML = HTMLString;
@@ -31,8 +32,38 @@ var CarLot = (function (globalScopeCarLot) {
 	domside.newSelect = function(event) {
 		event.currentTarget.classList.add("selected");
 		let selectedCard = document.getElementsByClassName("selected")[0];
-		console.log("selected card", selectedCard);
+		domside.targetDescripOfSelected(selectedCard);
 	}
+
+	domside.targetDescripOfSelected = function(selectedCard) {
+		let selectedDescrip = selectedCard.getElementsByClassName('deets');
+		doStuffToSelected(selectedCard, selectedDescrip);
+	}
+
+	function doStuffToSelected(selectedCard, selectedDescrip) {
+		var highlightedCard = document.getElementsByClassName('selected');
+		console.log("selected Card", selectedCard);
+		inputBox.focus();
+		inputBox.addEventListener('keyup', function () {
+			let replacementText = inputBox.value;
+			if (selectedCard.classList.contains('selected') && event.key !== 'Enter') {
+				selectedCard.querySelector('.deets').innerHTML = replacementText;
+				}
+			if (event.key === 'Enter')  {
+				// clearEvent();
+				inputBox.value = '';
+				}
+			});
+	}
+
+	function clearEvent() {
+		inputBox.removeEventListener('keyup', function() {
+			let replacementText = inputBox.value;
+		});
+		
+		
+	}
+
   globalScopeCarLot.DOMside = domside;
   return globalScopeCarLot;
 
