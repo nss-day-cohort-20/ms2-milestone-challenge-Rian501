@@ -1,7 +1,7 @@
 var CarLot = (function (globalScopeCarLot) {
 	let dataprep = Object.create(null);
 
-	dataprep.buildString = function (arrayOfObjs, cb2) {
+	dataprep.buildString = function (arrayOfObjs, domPrintCB) {
 	  let HTMLString = ''
 	  for (let i=0; i < (arrayOfObjs.length); i++) {
 	     if (i%3 === 1) {
@@ -31,7 +31,7 @@ var CarLot = (function (globalScopeCarLot) {
 	      </div>`
 		  }
 	  }
-	  cb2(HTMLString);
+	  domPrintCB(HTMLString);
 	}
     
    
