@@ -36,11 +36,6 @@ var CarLot = (function (globalScopeCarLot) {
 		domside.doStuffToSelected(selectedCard);
 	}
 
-	// domside.targetDescripOfSelected = function(selectedCard) {
-	// 	let selectedDescrip = selectedCard.getElementsByClassName('deets');
-	// 	doStuffToSelected(selectedCard, selectedDescrip);
-	// }
-
 	domside.doStuffToSelected = function(selectedCard) {
 		var highlightedCard = document.getElementsByClassName('selected');
 		console.log("selected Card", selectedCard);
@@ -52,28 +47,11 @@ var CarLot = (function (globalScopeCarLot) {
 				return
 				}
 			if (event.key === 'Enter')  {
-				// clearEvent();
 				inputBox.value = '';
 				}
 			});
 	}
 
-	// function clearEvent() {
-	// 	inputBox.removeEventListener('keyup', function() {
-	// 		let replacementText = inputBox.value;
-	// 	});
-		
-	// 		return false;
-		
-	// }
-
-	function clearEvent() {
-	inputBox.removeEventListener('keyup', function() {
-		let replacementText = inputBox.value;
-	});
-	inputBox.value = '';
-	return 
-}
 
   globalScopeCarLot.DOMside = domside;
   return globalScopeCarLot;
