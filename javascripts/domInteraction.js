@@ -31,16 +31,17 @@ var CarLot = (function (globalScopeCarLot) {
 
 	domside.newSelect = function(event) {
 		event.currentTarget.classList.add("selected");
+		console.log("event current target", event.currentTarget);
 		let selectedCard = document.getElementsByClassName("selected")[0];
-		domside.targetDescripOfSelected(selectedCard);
+		domside.doStuffToSelected(selectedCard);
 	}
 
-	domside.targetDescripOfSelected = function(selectedCard) {
-		let selectedDescrip = selectedCard.getElementsByClassName('deets');
-		doStuffToSelected(selectedCard, selectedDescrip);
-	}
+	// domside.targetDescripOfSelected = function(selectedCard) {
+	// 	let selectedDescrip = selectedCard.getElementsByClassName('deets');
+	// 	doStuffToSelected(selectedCard, selectedDescrip);
+	// }
 
-	function doStuffToSelected(selectedCard, selectedDescrip) {
+	domside.doStuffToSelected = function(selectedCard) {
 		var highlightedCard = document.getElementsByClassName('selected');
 		console.log("selected Card", selectedCard);
 		inputBox.focus();
@@ -48,6 +49,7 @@ var CarLot = (function (globalScopeCarLot) {
 			let replacementText = inputBox.value;
 			if (selectedCard.classList.contains('selected') && event.key !== 'Enter') {
 				selectedCard.querySelector('.deets').innerHTML = replacementText;
+				return
 				}
 			if (event.key === 'Enter')  {
 				// clearEvent();
@@ -56,13 +58,22 @@ var CarLot = (function (globalScopeCarLot) {
 			});
 	}
 
+	// function clearEvent() {
+	// 	inputBox.removeEventListener('keyup', function() {
+	// 		let replacementText = inputBox.value;
+	// 	});
+		
+	// 		return false;
+		
+	// }
+
 	function clearEvent() {
-		inputBox.removeEventListener('keyup', function() {
-			let replacementText = inputBox.value;
-		});
-		
-		
-	}
+	inputBox.removeEventListener('keyup', function() {
+		let replacementText = inputBox.value;
+	});
+	inputBox.value = '';
+	return 
+}
 
   globalScopeCarLot.DOMside = domside;
   return globalScopeCarLot;
